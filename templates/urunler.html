@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT Beauty and Healtgh Ürünler</title>
+    <!-- Logo -->
+    <link rel="icon" href="{%static 'img/logo.png'%}">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{%static 'urunler.css'%}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{%static 'bootstrap.min.css'%}">
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/85a8244a07.js" crossorigin="anonymous"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" >
+     <!-- FONT Baslik -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap" rel="stylesheet">
+     <!-- FONT -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+    
+ {% include 'includes/navbar.html' %}
+ {% if messages %}
+  
+ {% for mesaj in messages  %}
+ <div class="alert alert-{{mesaj.tags}} text-center">
+   {{mesaj}}
+ </div>
+   
+ {% endfor %}
+ {% else %}
+   
+ {% endif %}
+<!-- İndirim Resim -->
+<div class="container">
+    <img src="{%static 'img/indirim.png'%}" alt="indirim" class="mt-3 indirimresim">
+</div>
+<!-- Akordion -->
+<div class="container mt-5">
+    <div class="row">   
+       <div class="col-lg-3 col-md-12 col-sm-12">
+          <h2 class="text-center baslik">KATEGORİLER</h2>
+         <ul class="p-0">
+          
+          {% for kategori in kategoriler  %}
+          <div class="accordion mt-3 "><a href="{% url 'urunler'%}?search={{kategori.isim}}" class="text-decoration-none text-black" >{{kategori.isim}}</a> </div>
+          <div class="panel">
+            <ul>
+              
+              {% for altkategori in kategori.sub_category.all  %}
+                <li>
+                 <a href="{% url 'urunler'%}?search={{altkategori.isim}}">{{altkategori.isim}}</a> 
+                </li>  
+                      
+              {% endfor %}
+                
+            </ul>
+          </div>
+            
+          {% endfor %}
+            
+         </ul>
+              <hr class="cizgi">
+  
+              <img src="{%static 'img/Adsız.jpg'%}" alt="reklam" class="reklam"><hr>
+        </div>
+        <div class="col-lg-9 col-md-12 col-sm-12">
+            <h2 class="text-center baslik">ÜRÜNLER</h2>
+        <div class="row">
+          
+          {% for urun in urunler  %}
+            
+
+            
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+        <div class="card border-1" >
+          <div class="card-body text-center">
+            {% if urun.resim  %}
+            <img src="{{urun.resim.url}}" alt="bioderma"  class="resim">
+            {% else %}
+              <img src="" alt="urun">
+            {% endif %}
+           
+            <b class="text-center">{{urun.isim}}</b> <br> <br>
+            <p>{{urun.kategori.isim}}</p>
+
+            <i>{{urun.aciklama}}</i>
+              <br> <br>
+            <p><b class="text-center">{{urun.fiyat}} TL</b></p> 
+              <button class="btn " style="background-color:rgba(30, 5, 54);color:white;border:0;"><i class="fa-solid fa-basket-shopping"></i> Sepete Ekle </button>
+          </div>
+        </div>
+       
+       
+      </div>
+      {% endfor %}
+    </div>
+    </div>
+    </div> 
+</div>
+      
+    <!-- Popüler Cilt Bakım Setleri -->
+    <div class="container mt-4 mb-2">
+        <h3 class="text-center">POPÜLER CİLT BAKIM SETLERİMİZ</h3>
+        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{%static 'urunler/aveneset.jpg'%}" class="d-block w-100 slaytresim" alt="avene" >
+            </div>
+            <div class="carousel-item">
+              <img src="{%static 'urunler/niveaset.jpg'%}" class="d-block w-100 slaytresim" alt="nivea" >
+            </div>
+            <div class="carousel-item">
+              <img src="{%static 'urunler/biodermaset.jpg'%}" class="d-block w-100 slaytresim" alt="bioderma" >
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+ {% include 'includes/footer.html' %}
+    
+        <script src="{%static 'bootstrap.bundle.min.js'%}"></script>
+        <script>
+          var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("aktif");
+    
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+    
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,94 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT Beauty and Healtgh</title>
+    <!-- Logo -->
+    <link rel="icon" href="{%static 'img/logo.png'%}">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'anasayfa.css'%}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{%static 'bootstrap.min.css'%}">
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/85a8244a07.js" crossorigin="anonymous"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- FONT Baslik -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap" rel="stylesheet">
+     <!-- FONT -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    {%include 'includes/navbar.html'%}
+    {% if messages %}
+  
+    {% for mesaj in messages  %}
+    <div class="alert alert-{{mesaj.tags}} text-center">
+      {{mesaj}}
+    </div>
+      
+    {% endfor %}
+    {% else %}
+      
+    {% endif %}
+  
+      <!-- Slayt -->
+      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner mt-3">
+          <div class="carousel-item active" data-bs-interval="2000">
+            <img src="{%static 'img/slayt.jpg'%}" class="d-block w-100" alt="slaytbir">
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="{%static 'img/slayt2.jpg'%}" class="d-block w-100" alt="slaytiki">
+          </div>
+          <div class="carousel-item">
+            <img src="{%static 'img/slayt3.jpg'%}" class="d-block w-100" alt="slaytuc">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!-- Firmalar Bölümü -->
+      <h2 class="text-center mt-5 baslik">ANLAŞMALI OLDUĞUMUZ FİRMALAR</h2>
+      <div class="container mt-5">
+        <div class="row ">
+        {% for marka in markalar  %}
+          
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <a href="{% url 'urunler'%}?search={{marka.isim}}" style="text-decoration: none ;color:black;"><div class="card border-0 mt-3 mb-3">
+              <img src="{{marka.resim.url}}" alt="marka" class="m-auto markaresim" data-aos="zoom-in">
+             <b class="text-center m-2" data-aos="flip-up"><i>{{marka.isim}}</i> </b>
+           </div></a> 
+          
+        </div>
+        {% endfor %}
+      </div>
+     
+     
+      </div>
+      {%include 'includes/footer.html'%}
+      <!-- Bootstrap js -->
+      <script src="{% static 'bootstrap.bundle.min.js'%}"></script>
+      <!-- Bootstrap aos -->
+      <script>
+        AOS.init();
+      </script>
+              
+</body>
+</html>

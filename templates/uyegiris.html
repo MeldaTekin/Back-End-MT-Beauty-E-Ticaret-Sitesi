@@ -1,0 +1,94 @@
+
+{% load static %}
+
+  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT Beauty and Healtgh Üye Girişi</title>
+    <!-- Logo -->
+    <link rel="icon" href="img/logo.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'uyegiris.css'%}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{%static 'bootstrap.min.css'%}">
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/85a8244a07.js" crossorigin="anonymous"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" >
+     <!-- FONT -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+ {% include 'includes/navbar.html' %}
+ {% if messages %}
+  
+ {% for mesaj in messages  %}
+ <div class="alert alert-{{mesaj.tags}} text-center">
+   {{mesaj}}
+ </div>
+   
+ {% endfor %}
+ {% else %}
+   
+ {% endif %}
+ 
+
+  <!-- Üye Girişi veya Kayıt OL -->
+  <div class="container">
+    <div class="row">
+     <div class="col-lg-5 col-md-12 col-sm-12 mb-5 mt-5">
+       <div class="mt-5  p-2 ">
+       
+           <form action="" method="POST">
+            {% csrf_token %}
+            <h1 class="text-center">Giriş Yap</h1>
+            
+               <input type="text" class="form-control" name="kullanici" placeholder="Kullanıcı Adı"><br>
+                
+               <input type="password" class="form-control" name="sifre" placeholder="Parola"><br>
+               
+               <input type="checkbox"> Beni Hatırla <br>
+               <input type="submit" name="giris"  class=" grs mt-4" value="Giriş Yap" style="min-height: 40px;min-width: 90px;" >
+           </form>
+           
+       </div>
+     </div>
+     <div class="col-lg-2 col-md-12 col-sm-12 ">
+      <div class="yuvarlak">
+        <p class="mt-4">Veya</p>
+      </div>
+     </div>
+     <div class="col-lg-5 col-md-12 col-sm-12 mb-5 mt-5">
+       <div class=" mt-5 p-2 ">
+       
+           <form action="" method="POST">
+            {% csrf_token %}
+            <h1 class="text-center">Üye Ol</h1>
+          
+               <input type="text"  name="kullanici" class="form-control" placeholder="Kullanıcı Adı"><br>
+               <input type="password"  name="sifre" class="form-control" placeholder="Parola"><br>
+               <input type="text" name="email" class="form-control" placeholder="E-mail"> 
+               <input type="submit" name="kayit"  class=" grs mt-4" value="Üye Ol" style="min-height: 40px;min-width: 90px;">
+           </form>
+           
+       </div>
+     </div>
+    </div>
+ </div>
+
+ {% include 'includes/footer.html' %}
+
+    
+ <script src="{%static 'bootstrap.bundle.min.js'%}"></script>
+    
+</body>
+</html>

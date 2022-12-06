@@ -1,0 +1,259 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT Beauty and Healtgh Sepet</title>
+    <!-- Logo -->
+    <link rel="icon" href="{%static 'img/logo.png'%}">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{%static 'sepet.css'%}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{%static 'bootstrap.min.css'%}">
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/85a8244a07.js" crossorigin="anonymous"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" >
+</head>
+<body>
+    
+   {% include 'includes/navbar.html' %}
+  <!-- Sepet -->
+  <div class="container ">
+    <div class="row mt-3 mb-3 border border-1 border-secondary">
+      <div class="col-12">
+        <div class="row border-1 text-white text-center ust">
+          <div class="col-5">
+            <h5>ÜRÜN</h5>
+          </div>
+          <div class="col-2">
+            <h5>FİYAT</h5>
+          </div>
+          <div class="col-2">
+            <h5>ADET</h5>
+          </div>
+          <div class="col-3">
+            <h5>TOPLAM TUTAR</h5>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="col-12 ">
+        <div class="row text-center">
+          <div class="col-5">
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="{%static 'urunler/solanteguneskremi2.jpg'%}" alt="solante" class="me-5 mb-3 sepetresim" >
+              <p><b> Solante Pigmenta Koyu Lekelere Karşı Güneş Losyonu Spf 50+</b><br><i>Ürün Id:656526</i></p>
+            </div>
+          </div>
+          <div class="col-2 mt-5">
+           <p>270 TL</p>
+          </div>
+          <div class="col-2 mt-5">
+           <button class="border-0">+</button>
+           <input type="text" size="1" class="adet">
+           <button class="border-0">-</button>
+          </div>
+          <div class="col-2 mt-5">
+            <p class="text-center">270 TL</p>
+            
+          </div>
+          <div class="col-1 mt-5">
+            <button class="border-0 text-white me-3" style="min-width: 15%;background-color: rgba(30, 5, 54);">X</button>
+          </div>
+          
+
+        </div>
+      </div>
+      <hr>
+      <div class="col-12 ">
+        <div class="row text-center">
+          <div class="col-5">
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="{%static 'urunler/Avenemakyajtemizlemesuyu.jpg'%}" alt="avene"  class="me-5 mb-3 sepetresim" >
+              <p><b> Avene Lotion Micellaire Makyaj Temizleme Suyu</b><br><i>Ürün Id:656526</i></p>
+            </div>
+          </div>
+          <div class="col-2 mt-5">
+           <p>70 TL</p>
+          </div>
+          <div class="col-2 mt-5">
+           <button class="border-0 ">+</button>
+           <input type="text" size="1" class="adet">
+           <button class="border-0 ">-</button>
+          </div>
+          <div class="col-2 mt-5">
+            <p class="text-center">70 TL</p>
+            
+          </div>
+          <div class="col-1 mt-5">
+            <button class="border-0 text-white me-3" style="min-width: 15%;background-color: rgba(30, 5, 54);">X</button>
+          </div>
+          
+
+        </div>
+      </div>
+      <hr>
+      <div class="col-12 ">
+        <div class="row text-center">
+          <div class="col-5">
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="{%static 'urunler/biodermamakyajtemizlemesuyujpg.jpg'%}" alt="bioderma"  class="me-5 mb-3 sepetresim" >
+              <p><b> Bioderma Sensibio H<sup>2</sup>O Makyaj Temizleme Suyu</b><br><i>Ürün Id:656526</i></p>
+            </div>
+          </div>
+          <div class="col-2 mt-5">
+           <p>200 TL</p>
+          </div>
+          <div class="col-2 mt-5">
+           <button class="border-0">+</button>
+           <input type="text" size="1" class="adet">
+           <button class="border-0">-</button>
+          </div>
+          <div class="col-2 mt-5">
+            <p class="text-center">200 TL</p>
+            
+          </div>
+          <div class="col-1 mt-5">
+            <button class="border-0 text-white me-3" style="min-width: 15%;background-color: rgba(30, 5, 54);">X</button>
+          </div>
+          
+
+        </div>
+      </div>
+      <hr>
+      <div class="col-12 ">
+        <div class="row text-center">
+          <div class="col-5">
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="{%static 'urunler/colgatedişmacunu.jpg'%}" alt="colgate"  class="me-5 mb-3 sepetresim" >
+              <p><b> Colgate Total Gelişmiş Beyazlık Diş Macunu</b><br><i>Ürün Id:656526</i></p>
+            </div>
+          </div>
+          <div class="col-2 mt-5">
+           <p>40 TL</p>
+          </div>
+          <div class="col-2 mt-5">
+           <button class="border-0">+</button>
+           <input type="text" size="1" class="adet">
+           <button class="border-0">-</button>
+          </div>
+          <div class="col-2 mt-5">
+            <p class="text-center">40 TL</p>
+            
+          </div>
+          <div class="col-1 mt-5">
+            <button class="border-0 text-white me-3" style="min-width: 15%;background-color: rgba(30, 5, 54);">X</button>
+          </div>
+          
+
+        </div>
+      </div>
+      <hr>
+      <div class="col-12 ">
+        <div class="row text-center">
+          <div class="col-5">
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="{%static 'urunler/dpcoreksampua.jpg'%}" alt="dp"  class="me-5 mb-3 sepetresim" >
+              <p><b> Dp Çörekotu Yağlı Tuszuz Sülfatsız Şampuan </b><br><i>Ürün Id:656526</i></p>
+            </div>
+          </div>
+          <div class="col-2 mt-5">
+           <p>42 TL</p>
+          </div>
+          <div class="col-2 mt-5">
+           
+            <button class="border-0">+</button>
+            <input type="text" size="1" class="adet">
+            <button class="border-0">-</button>
+           
+          </div>
+          <div class="col-2 mt-5">
+            <p class="text-center">42 TL</p>
+            
+          </div>
+          <div class="col-1 mt-5">
+            <button class="border-0 text-white me-3" style="min-width: 15%;background-color: rgba(30, 5, 54);" >X</button>
+          </div>
+          
+
+        </div>
+      </div>
+  
+
+    </div>
+</div>
+<!-- Sepet altındaki kupon ve tutar kısmı -->
+<div class="container">
+<h4>Kupon Kullanmak İster Misiniz?</h4>
+<i>Kullanmak istediğiniz bir indirim kodunuz veya ödül puanınız olup olmadığını seçiniz. Ayrıca kargo ücretimize buradan ulaşabilirsiniz.</i>
+<div class="row">
+  <div class="col-lg-6 md-12 sm-12 mt-2 mb-3">
+    <div class="card birinci border border-1 border-secondary">
+       <div class="checkbox mt-4 ms-3">
+         <input type="checkbox"> İndirim Kuponu Kullanma <br>
+         <input type="checkbox"> Hediye Çeki Kullanma <br>
+         <input type="checkbox"> Kargo Ücreti Hesaplama <br>
+       </div>
+       <div class="mt-4 mb-4"> 
+        <div class="kod2 d-inline">
+          <label class="ms-3 sehir kod"> Şehir Seçiniz :</label>
+          <select class="me-3 kod">
+              <option value="sehir">-------------------------</option>
+              <option value="sehir">Ankara</option>
+              <option value="sehir">İstanbul</option>
+              <option value="sehir">Konya</option>
+              <option value="sehir">Antalya</option>
+              <option value="sehir">Bolu</option>
+          </select>
+        </div>
+          <div class="kod2 d-inline">
+          <label class="kod">Kodu Giriniz:</label>
+           <input type="text" class="kod" size="10">
+           </div>
+           <button class="btn hsp ms-3  " style="background-color:rgba(30, 5, 54);color:white;border:0;"> Mağazadan Teklif Al </button>
+           <button class="btn hsp ms-3  " style="background-color:rgba(30, 5, 54);color:white;border:0;"> Devam Et </button>
+      </div>
+    </div>
+    </div>
+    <div class="col-lg-6  md-12 sm-12 mt-2 mb-2">
+    <div class="card border border-secondary">
+            <div class="row p-3">
+                <div class="card-body ">
+                <div class="col-12 d-flex justify-content-between mb-2" style="height: 30px; background-color: #dadedc; border-radius: 5px; padding: 0 20px 0 20px;">
+                    <p>Tutar</p>
+                    <p>552 Tl</p>
+                </div>
+                <div class="col-12 d-flex justify-content-between mb-2 tutar" style="height: 30px; background-color: #dadedc; border-radius: 5px; padding: 0 20px 0 20px;">
+                    <p>Kargo</p>
+                    <p>0 TL</p>
+                </div> 
+                <div class="col-12 d-flex justify-content-between mb-2 tutar" style="height: 30px; background-color:#dadedc;  border-radius: 5px; padding: 0 20px 0 20px;">
+                    <p>KDV</p>
+                    <p>%5</p>
+                </div>
+                <div class="col-12 d-flex justify-content-between mb-2 tutar" style="height: 30px; background-color: #dadedc; border-radius: 5px; padding: 0 20px 0 20px;">
+                  <p>Toplam Tutar</p>
+                    <p>577.6 TL</p>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mb-3 ms-3">
+                  <button class="btn ms-3" style="background-color:rgba(30, 5, 54);color:white;border:0;"> Güncelle </button>
+                  <button class="btn ms-3 " style="background-color:rgba(30, 5, 54);color:white;border:0;"> Ödeme </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+         </div>
+        </div>
+         
+   {% include 'includes/footer.html' %}
+  <script src="{%static 'bootstrap.bundle.min.js'%}"></script>
+</body>
+</html>

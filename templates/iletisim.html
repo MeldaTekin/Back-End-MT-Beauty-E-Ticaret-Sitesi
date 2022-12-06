@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT Beauty and Healtgh İletişim</title>
+     <!-- Logo -->
+     <link rel="icon" href="{%static 'img/logo.png'%}">
+     <!-- CSS -->
+     <link rel="stylesheet" href="{%static 'iletisim.css'%}">
+     <!-- Bootstrap -->
+     <link rel="stylesheet" href="{%static 'bootstrap.min.css'%}">
+     <!-- FontAwesome -->
+     <script src="https://kit.fontawesome.com/85a8244a07.js" crossorigin="anonymous"></script>
+     <!-- AOS -->
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap" rel="stylesheet">
+</head>
+<body>
+{% include 'includes/navbar.html' %}
+{% if messages %}
+  
+{% for mesaj in messages  %}
+<div class="alert alert-{{mesaj.tags}} text-center">
+  {{mesaj}}
+</div>
+  
+{% endfor %}
+{% else %}
+  
+{% endif %}
+
+  <div class="container">
+    <div class="row">
+        <!-- İletişim Formu -->
+        <div class="col-lg-8 col-md-12 col-sm-12 mt-5">
+      
+            <form id="contact-form" method="POST">
+                {% csrf_token %}
+              <h3 class="text-center baslik">İLETİŞİM</h3>
+              <hr>
+              <div class="messages"></div>
+              <div class="controls">
+                  <div class="row">
+                      <div class="col-md-6">
+                              <label for="">Adınız</label>
+                              <input id="" type="text" name="ad" class="form-control" placeholder="Lütfen adınızı yazın *" required="required" data-error="Adınız gerekli.">
+
+                      </div>
+                      <div class="col-md-6">
+                              <label for="">Soyadınız</label>
+                              <input id="" type="text" name="soyad" class="form-control" placeholder="Lütfen soyadınızı yazın *" required="required" data-error="Soyadınız gerekli.">
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                              <label for="">E-Posta Adresiniz</label>
+                              <input id="" type="email" name="eposta" class="form-control" placeholder="Lütfen E-Posta adresinizi yazın *" required="required" data-error="Geçerli bir E-Posta gerekli.">
+                      </div>
+                      <div class="col-md-6">
+                              <label for="">Telefon Numaranız</label>
+                              <input id="" type="tel" name="telefon" class="form-control" placeholder="Lütfen telefon numaranızı yazın">
+                          
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                              <label for="">Mesajınız</label>
+                              <textarea id="" name="mesaj" class="form-control" placeholder="Lütfen mesajınızı yazın *" rows="4" required="required" data-error="Lütfen mesajınızı yazın."></textarea>
+
+                      </div>
+                      <div class="col-md-12 d-flex justify-content-end">
+                          <input type="submit" class="mt-3 mesaj " value="Mesajı Gönder" >
+                      </div>
+                  </div>
+             
+                  
+              </div>
+          
+          </form>
+           
+    </div>
+    <!-- İletişim Bilgileri Kartı -->
+    <div class="col-lg-4 col-md-12 col-sm-12 mt-5 text-center" >
+     
+       <h3 class="text center baslik">İLETİŞİM BİLGİLERİ</h3>
+       <hr>
+    
+      <div class="card">
+      <i class="mt-4">M Beauty and Heaulght Inc. <br>
+      <b>Adres:</b> Ehlibeyt, Ceyhun Atuf Kansu Cd. No:124, 06520 Çankaya/Ankara <br>
+      <b>Telefon:</b> <a href="tel:05078741762" class="numara text-dark "> 1515321532 <br></a>
+      <b>E-mail:</b> <a href="mailto:meldatkn9@gmail.com" class="numara text-dark">meldatkn9@gmail.com <br></a>
+      
+    </i>
+   <div class=" mt-5 mb-3">
+     <h5 class="text-center">Sosyal Medya Hesaplarımız</h5>
+       <a href=""><i class="fa-brands fa-facebook text-dark"></i></a>
+       <a href=""><i class="fa-brands fa-instagram text-dark"></i></a> 
+       <a href=""><i class="fa-brands fa-linkedin text-dark"></i></a> 
+       <a href=""> <i class="fa-brands fa-google text-dark"></i> </a>
+   </div>
+   </div>
+    </div>
+  </div>
+  </div>  
+  {% include 'includes/footer.html' %}
+ 
+    
+<script src="{%static 'bootstrap.bundle.min.js'%}"></script>
+</body>
+</html>

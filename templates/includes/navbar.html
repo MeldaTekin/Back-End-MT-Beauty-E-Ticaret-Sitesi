@@ -1,0 +1,103 @@
+   {% load static %}
+   <!-- NAVBAR -->
+    <!-- Navbar-1 -->
+    <nav class="navbar navbar-expand-lg  ilk">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNavÜstMarkup">
+            <div class="navbar-nav">
+              <a class="text-white" href="tel:05078741762"><i class="fa-solid fa-phone"></i> 05078741762</a>
+              <a class="text-white ms-4" href="mailto:meldatkn9@gmail.com"><i class="fa-solid fa-envelope"></i> meldatkn9@gmail.com </a>
+              
+              </div>
+          </div>
+          <div class="d-lg-flex justify-content-end">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+             <div class="navbar-nav mt-3 mb-3">
+                 <div class="nav-sosyal "> 
+                  <a href="https://www.instagram.com/" target="_blank"
+                    ><i class="fa-brands fa-instagram text-white"></i
+                  ></a>
+                  <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoidHIifQ%3D%3D%22%7D" target="_blank"
+                    ><i class="fa-brands fa-twitter ms-3 text-white"></i
+                  ></a>
+                  <a href="https://tr-tr.facebook.com/" target="_blank"
+                    ><i class="fa-brands fa-facebook ms-3 text-white"></i
+                  ></a>
+                 </div>
+             </div>
+            </div>
+           </div>
+          </div>
+        
+      </nav>
+       <!-- Navbar-2 -->
+       <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a href="#" class="navbar-brand">
+            <img src="{%static 'img/logo.png'%}" alt="logo" width="170">
+          </a>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+            
+            
+              <li>
+                <form class="d-lg-flex arama" action="{%url 'urunler'%}" method="GET" role="search">
+                  <input class="form-control me-2 " type="search" name="search" value="{{search}}"aria-label="Search" size="60">
+                  <button class="aramabuton " type="submit">Arama</button>
+                </form>
+              </li>
+             
+            
+            
+          </ul>
+            <form class="d-lg-flex justify-content-end uye">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                 
+                  <li class="nav-item ">
+                    <a class="nav-link   text-black"  href="{%url 'anasayfa'%}">Anasayfa</a>
+                  </li>
+                <li>
+                    <a class="nav-link  text-black" href="{%url 'iletisim'%}">İletişim</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link  text-black" href="{%url 'urunler'%}">Ürünler</a>
+                  </li>
+                  
+                 
+                  
+                  {% if user.is_authenticated %}
+                  <li class="nav-item ">
+                    <a class="nav-link  text-black" href="{%url 'sepet'%}">Sepet</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link  text-black" href="#">{{request.user}}</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" style="color:red ;" href="{%url 'cikis'%}">Çıkış Yap <i class="fa-solid fa-right-from-bracket"></i></a>
+                  </li>
+                  
+                   
+               
+                        
+                    </ul>
+                  </li>
+                 
+                 
+                 
+                 
+                  {% else %}
+                  <li class="nav-item ">
+                    <a class="nav-link  text-black"  href="{%url 'uyegiris'%}">Üye Ol/Giriş Yap</a>
+                  </li>
+                  {% endif %}
+                    
+                 
+                 
+                </ul>
+            </form>
+          </div>
+        </div>
+      </nav>
