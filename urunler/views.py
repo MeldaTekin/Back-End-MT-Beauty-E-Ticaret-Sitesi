@@ -7,7 +7,7 @@ def index(request):
     context={
         'markalar':markalar,
     }
-    return render(request,'index.html',context)
+    return render(request,'anasayfa.html',context)
 def urunler(request):
     kategoriler=Kategori.objects.all()
     altkategori=AltKategori.objects.all()
